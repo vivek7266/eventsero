@@ -1,0 +1,37 @@
+documentationLink: "link to eventsero"
+
+environment: "local"
+
+server:
+  type: default
+  adminContextPath: /admin
+  applicationConnectors:
+    - port: 9000
+      type: http
+  adminConnectors:
+    - port: 9001
+      type: http
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      logFormat: "%d [%thread] %-5level %c{15} - [%X{X-Transaction-Key} - %X{X-Request-Key}] - %msg%n%rEx"
+
+database:
+  driverClass: com.mysql.jdbc.Driver
+  user: root
+  password:
+  url: jdbc:mysql://localhost/eventsero?serverTimezone=UTC
+  properties:
+    charSet: UTF-8
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+  #validationQueryTimeout: 3s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
