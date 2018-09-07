@@ -10,10 +10,10 @@ Dropwizard based REST APIs for Organizers.
 This is a maven based project. All the dependencies are in `pom.xml`. 
  
 Steps to run:
-  - create a mysql database: eventsero
+  - create a mysql database: `eventsero`
   - ceate the tables as mentioned here.
   - run `mvn clean install`
-  - java - jar target/eventing-1.0-SNAPSHOT.jar server server src/main/resources/config-files/dev.yml
+  - `java - jar target/eventing-1.0-SNAPSHOT.jar server server src/main/resources/config-files/dev.yml`
 
 Voila!
  - Go to http://localhost:9000/v1/event
